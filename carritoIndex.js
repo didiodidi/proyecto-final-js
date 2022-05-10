@@ -7,6 +7,7 @@ const contenedorCarrito = document.getElementById('carrito-contenedor');
 let carritoDeCompras = [];
 
 
+//---> Vaciar carrito<---
 const botonVaciar = document.getElementById('comprar')
 
 botonVaciar.addEventListener('click',()=>{
