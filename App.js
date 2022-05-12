@@ -26,13 +26,33 @@ export const mostrarProductos = async () => {
     boton.addEventListener('click', () => {
         carritoIndex(producto.id)
 
-        Toastify({
 
-            text: `se añadio el producto ${producto.nombre} al carrito`,
+        Toastify({
+            text: `Se añadio el ${producto.nombre} al carrito`,
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "bottom", // `top` or `bottom`
+            position: "right", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+                background: "linear-gradient(to right, #69A0FA, #3380FE)",
+            },
+            onClick: function(){} // Callback after click
+        }).showToast();
+
+
+
+
+
+        // Toastify({
+
+        //     text: `se añadio el producto ${producto.nombre} al carrito`,
             
-            duration: 1500
+        //     duration: 1500
             
-            }).showToast();
+        //     }).showToast();
     })
 }) 
 };
