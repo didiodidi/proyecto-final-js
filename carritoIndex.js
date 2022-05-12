@@ -8,7 +8,7 @@ import { productos } from "./stock.js";
 const contenedorCarrito = document.getElementById('carrito-contenedor');
 
 
-// --->Funcion comprar
+// --->Funcion comprar , ejecuta el boton comprar del modal:
 const botonVaciar = document.getElementById('comprar')
 
 let carritoDeCompras = [];
@@ -28,16 +28,11 @@ vaciarDom();
 
 
 
-//Borre productoEnCarrito ,de la linea 15 del archivo index.js, creando la siguiente funcion.Este quedaba antes por el DOMContentLoaded de tal --->>
+//Borre el productoEnCarrito del DOM con la siguente funcion ,de la linea 15 del archivo index.js.Este persistia en el DOM por el DOMContentLoaded  --->>
 function vaciarDom () {
   let borrar = document.querySelectorAll('.productoEnCarrito');
   borrar.forEach(element => element.remove());
 }
-const actualizarModal = document.getElementById('carrito');
-//----------    
-const botonComprar = document.getElementById('comprar');
-const cerrarCarrito = document.getElementById('cerrar')
-
 
 
 export const carritoIndex = (productoId) => {
