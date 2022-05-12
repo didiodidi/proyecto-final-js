@@ -1,19 +1,42 @@
-import { actualizarCarrito } from "./actualizarCarrito.js";
+import { actualizarCarrito} from "./actualizarCarrito.js";
 import { productos } from "./stock.js";
 
 
 
+
+
 const contenedorCarrito = document.getElementById('carrito-contenedor');
-let carritoDeCompras = [];
 
 
-//---> Vaciar carrito<---
+// --->Funcion comprar
 const botonVaciar = document.getElementById('comprar')
 
+let carritoDeCompras = [];
+
 botonVaciar.addEventListener('click',()=>{
-    carritoDeCompras.lenght = 0;
-    actualizarCarrito(carritoDeCompras)
+    const arrayCompras = carritoDeCompras
+    arrayCompras.length = 0;
+    actualizarCarrito(arrayCompras);
+
+    //Forma alternativa de resetear el productoEnCarrito del DOMContentLoaded--->>
+    // location.reload();
+
+vaciarDom();
 })
+
+
+
+
+
+//Borre productoEnCarrito ,de la linea 15 del archivo index.js, creando la siguiente funcion.Este quedaba antes por el DOMContentLoaded de tal --->>
+function vaciarDom () {
+  let borrar = document.querySelectorAll('.productoEnCarrito');
+  borrar.forEach(element => element.remove());
+}
+const actualizarModal = document.getElementById('carrito');
+//----------    
+const botonComprar = document.getElementById('comprar');
+const cerrarCarrito = document.getElementById('cerrar')
 
 
 
@@ -51,9 +74,11 @@ export const eliminarProductoCarrito = (productoId, productoNombre ) => {
   })   
 }
 
+//-----> COMPRAR PRODUCTO --->
 
 
-const contarProductosRepetidos = (prodRepetido, productoId) => {
+
+export const contarProductosRepetidos = (prodRepetido, productoId) => {
   if (prodRepetido){
     prodRepetido.cantidad++
     document.getElementById(`cantidad${prodRepetido.id}`).innerHTML = `<p id=cantidad${prodRepetido.id}>Cantidad:${prodRepetido.cantidad}</p>`;

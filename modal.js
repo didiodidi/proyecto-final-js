@@ -1,9 +1,10 @@
 
+
 const modalContenedor = document.querySelector('.modal-container');
 const abrirCarrito = document.getElementById('open');
 const cerrarCarrito = document.getElementById('cerrar');
-const botonComprar = document.getElementById('comprar');
 const modalCarrito = document.querySelector('.modal-carrito');
+const modalComprar = document.getElementById('comprar');
 
 
 
@@ -24,6 +25,9 @@ modalCarrito.addEventListener('click', (e) =>{
     e.stopPropagation();
 })
 
-// botonComprar.addEventListener('click',() => {
-//     cerrarCarrito.click();
-// })
+modalComprar.addEventListener('click', ()=>{
+    cerrarCarrito.click();
+})
+
+
+
